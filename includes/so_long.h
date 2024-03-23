@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 16:45:04 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/21 18:59:57 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/23 14:27:50 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,15 @@
 # include <stdlib.h>
 # include "../gnl/get_next_line.h"
 
-# define HEIGHT 500
-# define WIDTH 500
-# define ESC_KEY 53
-//# define ESC_KEY_LINUX XK_Escape
-
 typedef struct s_character 
 {
 	int	x;
 	int	y;
 	int	img_width;
 	int	img_height;
-	int	fd;
+	int	map_width;
+	int	map_height;
+	char	*filepath;
 	char	**mapz;
 	void	*character_image;
 } t_character;
@@ -42,6 +39,10 @@ typedef struct s_list
 	t_character	*character;
 } t_list;
 
-char    **parse_map(int fd);
+void    parse_map(char *filepath, t_list **var);
+char    **fill_map(char *filepath, int num, char *mline, t_list **var);
+int     error_handle(char *param, int err);
+int     ft_strlen(char  *str);
+
 
 #endif

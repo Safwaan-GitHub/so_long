@@ -6,7 +6,7 @@
 #    By: sanoor <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/18 06:56:37 by sanoor            #+#    #+#              #
-#    Updated: 2024/03/21 19:02:25 by sanoor           ###   ########.fr        #
+#    Updated: 2024/03/23 14:32:54 by sanoor           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = libx
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g
 CSOURCE = main.c map.c gnl/get_next_line.c \
-	  gnl/get_next_line_utils.c
+	  gnl/get_next_line_utils.c error_handle.c
 OSOURCE = $(CSOURCE:.c = .o)
 
 $(NAME): $(OSOURCE)
