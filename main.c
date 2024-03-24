@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 06:45:16 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/23 15:39:58 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/24 13:56:47 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ int	handle_keypress(int keycode, t_list *var)
 	if (keycode == XK_Escape)
 	{
 		mlx_destroy_image(var->mlx_conn, var->character->character_image);
+		mlx_destroy_image(var->mlx_conn, var->character->wall_image);
 		mlx_destroy_window(var->mlx_conn, var->win);
 		mlx_destroy_display(var->mlx_conn);
 		free(var->mlx_conn);

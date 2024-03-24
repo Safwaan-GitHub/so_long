@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 15:40:27 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/23 18:11:54 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/24 14:01:04 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,11 @@ void	manage_map(t_list *var, int i, int j)
 
 void	image_parse(t_list *var)
 {
-	if (var->character->character_image == NULL)
 		var->character->character_image
 			= mlx_xpm_file_to_image(var->mlx_conn,
 					"imgs/idle2.xpm",
 					&(var->character->img_width),
 					&(var->character->img_height));
-	if (var->character->wall_image == NULL)
 		var->character->wall_image
 			= mlx_xpm_file_to_image(var->mlx_conn,
 					"imgs/Wall.xpm",
