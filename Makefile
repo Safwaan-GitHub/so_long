@@ -14,7 +14,8 @@ NAME = libx
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -g
 CSOURCE = main.c map.c gnl/get_next_line.c \
-	  gnl/get_next_line_utils.c error_handle.c
+	  gnl/get_next_line_utils.c error_handle.c \
+	  pieces.c mapcreate.c
 OSOURCE = $(CSOURCE:.c = .o)
 
 $(NAME): $(OSOURCE)

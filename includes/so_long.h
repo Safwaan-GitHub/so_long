@@ -30,6 +30,7 @@ typedef struct s_character
 	char	*filepath;
 	char	**mapz;
 	void	*character_image;
+	void	*wall_image;
 } t_character;
 
 typedef struct s_list
@@ -43,6 +44,12 @@ void    parse_map(char *filepath, t_list **var);
 char    **fill_map(char *filepath, int num, char *mline, t_list **var);
 int     error_handle(char *param, int err);
 int     ft_strlen(char  *str);
-
+int     put_wall(t_list *var);
+int     put_base(t_list *var);
+int     put_player(t_list *var);
+int     put_collectable(t_list *var);
+int     put_exit(t_list *var);
+void    manage_map(t_list *var, int i, int j);
+void    image_parse(t_list *var);
 
 #endif

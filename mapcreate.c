@@ -12,31 +12,37 @@
 
 #include "./includes/so_long.h"
 
-void	manage_map(t_list **var)
+void	manage_map(t_list *var, int i, int j)
 {
-	char	**map;
-	char	*line;
-	t_character	*character;
-
-	character = var->character;
-	map = character->mapz;
-	line = *map;
-	while (*line)
-	{
-		if (*line == 1)
-			wall_piece(var, character);
-		if (*line == 0)
-			ground_piece(var, character);
-		if (*line == 'P')
-			character_piece(var, character);
-		if (*line == 'C')
-			collectable_piece(var, character);
-		if (*line == 'E')
-			exit_piece(var, character);
-	}
+	if (var->character->mapz[i][j] == '1'
+			&& var->character->mapz[i][j])
+		put_wall(var);
+	else if (var->character->mapz[i][j] == '0'
+			&& var->character->mapz[i][j])
+		put_base(var);
+	else if (var->character->mapz[i][j] == 'P'
+			&& var->character->mapz[i][j])
+		put_player(var);
+	else if (var->character->mapz[i][j] == 'C'
+			&& var->character->mapz[i][j])
+		put_collectable(var);
+	else if (var->character->mapz[i][j] == 'E'
+			&& var->character->mapz[i][j])
+		put_exit(var);
 }
 
-void	wall_piece(t_list **var, t_character *character)
+void	image_parse(t_list *var)
 {
-
+	if (var->character->character_image == NULL)
+		var->character->character_image
+			= mlx_xpm_file_to_image(var->mlx_conn,
+					"imgs/idle2.xpm",
+					&(var->character->img_width),
+					&(var->character->img_height));
+	if (var->character->wall_image == NULL)
+		var->character->wall_image
+			= mlx_xpm_file_to_image(var->mlx_conn,
+					"imgs/Wall.xpm",
+					&(var->character->img_width),
+					&(var->character->img_height));
 }
