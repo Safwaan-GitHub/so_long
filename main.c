@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 06:45:16 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/24 13:56:47 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/24 16:50:23 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,9 @@ int	handle_keypress(int keycode, t_list *var)
 	{
 		mlx_destroy_image(var->mlx_conn, var->character->character_image);
 		mlx_destroy_image(var->mlx_conn, var->character->wall_image);
+		mlx_destroy_image(var->mlx_conn, var->character->base_image);
+		mlx_destroy_image(var->mlx_conn, var->character->collectable_image);
+		mlx_destroy_image(var->mlx_conn, var->character->exit_image);
 		mlx_destroy_window(var->mlx_conn, var->win);
 		mlx_destroy_display(var->mlx_conn);
 		free(var->mlx_conn);
@@ -97,8 +100,6 @@ int	main(int ac, char **av)
 	var->win = mlx_new_window(var->mlx_conn, var->character->map_width,
 			var->character->map_height, "So_long"); 
 	mlx_key_hook(var->win, handle_keypress, var);
-
 	mlx_loop_hook(var->mlx_conn, update_and_render, var);
-
 	mlx_loop(var->mlx_conn);
 }

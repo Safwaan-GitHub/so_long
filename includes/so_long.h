@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 16:45:04 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/23 14:27:50 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/24 16:47:34 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ typedef struct s_character
 	char	**mapz;
 	void	*character_image;
 	void	*wall_image;
+	void	*base_image;
+	void	*exit_image;
+	void	*collectable_image;
 } t_character;
 
 typedef struct s_list
