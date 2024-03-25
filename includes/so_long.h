@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 16:45:04 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/25 17:05:25 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/25 17:58:59 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,7 @@ void    destroy(t_list *var);
 void    free_all(t_list *var);
 void    move_character(t_list *var, int direction);
 void    correct_map(t_list *var, int x, int y);
+void    save_charcoords(t_list *var, int i, int j);
+void    save_coords(t_list *var, int i, int j);
 
 #endif

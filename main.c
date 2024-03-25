@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 06:45:16 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/25 17:04:55 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/25 17:59:52 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,17 @@ int	update_and_render(void *param)
 	int	j;
 
 	i = 0;
-	j = 0;
-	while (var->character->y < var->character->map_height)
+	while (i < (var->character->map_height / var->character->img_height))
 	{
-		while (var->character->x < var->character->map_width)
+		j = 0;
+		while (j < (var->character->map_width / var->character->img_width))
 		{
-			//printf("x[%d]y[%d]\n", var->character->x, var->character->y);
 			manage_map(var, i, j);
-			var->character->x += var->character->img_width;
 			j++;
 		}
 		i++;
-		j = 0;
-		var->character->x = 0;
-		var->character->y += var->character->img_height;
 	}
+	put_player(var);
 	return (0);
 }
 
