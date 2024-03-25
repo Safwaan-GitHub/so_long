@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 16:45:04 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/25 17:58:59 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/25 20:01:50 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_character
 	int	img_height;
 	int	map_width;
 	int	map_height;
-	int	collected_count;
+	int	collect_count;
 	char	*filepath;
 	char	**mapz;
 	char	**char_pos;
@@ -64,5 +64,6 @@ void    move_character(t_list *var, int direction);
 void    correct_map(t_list *var, int x, int y);
 void    save_charcoords(t_list *var, int i, int j);
 void    save_coords(t_list *var, int i, int j);
+void    collect_list(t_list **var);
 
 #endif

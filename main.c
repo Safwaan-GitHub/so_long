@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 06:45:16 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/25 17:59:52 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/25 21:25:00 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,31 @@ int	handle_keypress(int keycode, t_list *var)
 		move_character(var, keycode);
 
 	return (0);
+}
+
+void	collect_list(t_list **var)
+{
+	char	**map;
+	int	i;
+	int	k;
+
+	i = 0;
+	map = (*var)->character->mapz;
+	while (map[i][k])
+	{
+		k = 0;
+		while (map[i][k])
+		{
+			printf("[%d]: collect_count\n", (*var)->character->collect_count);
+			if (map[i][k] == 'C')
+				(*var)->character->collect_count++;
+			k++;
+		}
+		i++;
+		k = 0;
+		if (map[i] == NULL)
+			return ;
+	}
 }
 
 void	pop_data(t_list *var, char **av)

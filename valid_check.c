@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 08:39:33 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/25 10:51:23 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/25 21:24:11 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,20 +53,21 @@ void	correct_map(t_list *var, int x, int y)
 	map_y = y / 64;
 	prev_x = var->character->x / 64;
 	prev_y = var->character->y / 64;
-	printf("[%d][%d]: current map_x . map_y\n", map_x, map_y);
-	printf("[%d][%d]: previous map_x . map_y\n", prev_x, prev_y);
-	printf("[%d][%d]: current mapwidth . mapheight\n", var->character->map_width / 64,
-			var->character->map_height /64);
 	if ((map_x >= 0) && (map_x < (var->character->map_width / 64))
 			&& (map_y >= 0) && (map_y < (var->character->map_height / 64))
 			&& (var->character->mapz[map_y][map_x] != '1'))
 	{
+		if (var->character->mapz[map_y][map_x] == 'C')
+		{
+			printf("[%d]: collect_count\n", var->character->collect_count);
+			var->character->collect_count--;
+			if (var->character->collect_count == 1)
+				put_exit(var);
+		}
 		var->character->mapz[prev_y][prev_x] = '0';
-		printf("[%d][%d]: moving down\n", prev_x, prev_y);
 		var->character->x = x;
 		var->character->y = y;
 		var->character->mapz[map_y][map_x] = 'P';
-		printf("[%d][%d]: moving down\n", prev_x, prev_y);
 	}
 }
 /*

@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 18:14:28 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/23 15:29:55 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/25 20:01:09 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	parse_map(char *filepath, t_list **var)
 	printf("[%d]\n", num);
 	(*var)->character->map_height = (num * ((*var)->character->img_height));
 	(*var)->character->mapz = fill_map(filepath, num, map, var);
+	collect_list(var);
 }
 
 char	**fill_map(char *filepath, int num, char *mline, t_list **var)
