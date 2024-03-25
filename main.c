@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 06:45:16 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/24 16:50:23 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/25 17:04:55 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	update_and_render(void *param)
 	{
 		while (var->character->x < var->character->map_width)
 		{
+			//printf("x[%d]y[%d]\n", var->character->x, var->character->y);
 			manage_map(var, i, j);
 			var->character->x += var->character->img_width;
 			j++;
@@ -38,36 +39,22 @@ int	update_and_render(void *param)
 
 int	handle_keypress(int keycode, t_list *var)
 {
-	int	i;
-
-	i = 0;
 	if (keycode == XK_Escape)
 	{
-		mlx_destroy_image(var->mlx_conn, var->character->character_image);
-		mlx_destroy_image(var->mlx_conn, var->character->wall_image);
-		mlx_destroy_image(var->mlx_conn, var->character->base_image);
-		mlx_destroy_image(var->mlx_conn, var->character->collectable_image);
-		mlx_destroy_image(var->mlx_conn, var->character->exit_image);
-		mlx_destroy_window(var->mlx_conn, var->win);
-		mlx_destroy_display(var->mlx_conn);
-		free(var->mlx_conn);
-		while (var->character->mapz[i])
-			free(var->character->mapz[i++]);
-		free(var->character->mapz);
-		free(var->character);
-		free(var);
+		destroy(var);
+		free_all(var);
 		printf("ESC key pressed. Exiting...\n");
 		exit(0);
-	}/*
-	if (keycode == KEY_W)
-		var->game_state->character.y -= 10;
-	if (keycode == KEY_S)
-		var->game_state->character.y += 10;
-	if (keycode == KEY_D)
-		var->game_state->character.x += 10;
-	if (keycode == KEY_A)
-		var->game_state->character.x -= 10;
-		*/
+	}
+	if (keycode == XK_w)
+		move_character(var, keycode);
+	if (keycode == XK_s)
+		move_character(var, keycode);
+	if (keycode == XK_a)
+		move_character(var, keycode);
+	if (keycode == XK_d)
+		move_character(var, keycode);
+
 	return (0);
 }
 

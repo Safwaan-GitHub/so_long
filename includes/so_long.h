@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 16:45:04 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/24 16:47:34 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/25 17:05:25 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,16 @@ typedef struct s_character
 {
 	int	x;
 	int	y;
+	int	orig_x;
+	int	orig_y;
 	int	img_width;
 	int	img_height;
 	int	map_width;
 	int	map_height;
+	int	collected_count;
 	char	*filepath;
 	char	**mapz;
+	char	**char_pos;
 	void	*character_image;
 	void	*wall_image;
 	void	*base_image;
@@ -43,7 +47,6 @@ typedef struct s_list
 	t_character	*character;
 } t_list;
 
-void    parse_map(char *filepath, t_list **var);
 char    **fill_map(char *filepath, int num, char *mline, t_list **var);
 int     error_handle(char *param, int err);
 int     ft_strlen(char  *str);
@@ -52,7 +55,12 @@ int     put_base(t_list *var);
 int     put_player(t_list *var);
 int     put_collectable(t_list *var);
 int     put_exit(t_list *var);
+void    parse_map(char *filepath, t_list **var);
 void    manage_map(t_list *var, int i, int j);
 void    image_parse(t_list *var);
+void    destroy(t_list *var);
+void    free_all(t_list *var);
+void    move_character(t_list *var, int direction);
+void    correct_map(t_list *var, int x, int y);
 
 #endif

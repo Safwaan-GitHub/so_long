@@ -9,7 +9,7 @@
 !_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
 !_TAG_PROGRAM_URL	https://ctags.io/	/official site/
 !_TAG_PROGRAM_VERSION	5.9.0	//
-$(NAME)	Makefile	/^$(NAME): $(OBJ)$/;"	t
+$(NAME)	Makefile	/^$(NAME): $(OSOURCE)$/;"	t
 $(NAME)	minilibx-linux/Makefile.mk	/^$(NAME)	: $(OBJ)$/;"	t
 $(NAME)	minilibx-linux/test/Makefile.mk	/^$(NAME): $(OBJ)$/;"	t
 $(OBJ_DIR)/%.o	minilibx-linux/Makefile.mk	/^$(OBJ_DIR)\/%.o: %.c$/;"	t
@@ -50,12 +50,10 @@ DESCRIPTION	minilibx-linux/man/man3/mlx_pixel_put.3	/^.SH DESCRIPTION$/;"	s	titl
 ENV_DISPLAY	minilibx-linux/mlx_int.h	/^# define ENV_DISPLAY /;"	d
 EOF	minilibx-linux/configure	/^cat <<EOF$/;"	h
 ERR_NO_TRUECOLOR	minilibx-linux/mlx_int.h	/^# define ERR_NO_TRUECOLOR /;"	d
-ESC_KEY	includes/so_long.h	/^# define ESC_KEY /;"	d
 GET_NEXT_LINE_BONUS_H	gnl/get_next_line_bonus.h	/^# define GET_NEXT_LINE_BONUS_H$/;"	d
 GET_NEXT_LINE_H	gnl/get_next_line.h	/^# define GET_NEXT_LINE_H$/;"	d
 GOING	minilibx-linux/man/man1/mlx_loop.1	/^.SH GOING FURTHER WITH EVENTS$/;"	s	title:MiniLibX
 GOING	minilibx-linux/man/man3/mlx_loop.3	/^.SH GOING FURTHER WITH EVENTS$/;"	s	title:MiniLibX
-HEIGHT	includes/so_long.h	/^# define HEIGHT /;"	d
 IM1_SX	minilibx-linux/test/main.c	/^#define	IM1_SX	/;"	d	file:
 IM1_SY	minilibx-linux/test/main.c	/^#define	IM1_SY	/;"	d	file:
 IM3_SX	minilibx-linux/test/main.c	/^#define	IM3_SX	/;"	d	file:
@@ -140,7 +138,6 @@ SYNOPSYS	minilibx-linux/man/man3/mlx_pixel_put.3	/^.SH SYNOPSYS$/;"	s	title:Mini
 UNAME	minilibx-linux/Makefile.mk	/^UNAME = $(shell uname)$/;"	m
 UNAME	minilibx-linux/test/Makefile.mk	/^UNAME := $(shell uname)$/;"	m
 WARN_SHM_ATTACH	minilibx-linux/mlx_int.h	/^# define WARN_SHM_ATTACH /;"	d
-WIDTH	includes/so_long.h	/^# define WIDTH /;"	d
 WIN1_SX	minilibx-linux/test/main.c	/^#define	WIN1_SX	/;"	d	file:
 WIN1_SY	minilibx-linux/test/main.c	/^#define	WIN1_SY	/;"	d	file:
 X-WINDOW	minilibx-linux/man/man1/mlx.1	/^.SH X-WINDOW CONCEPT$/;"	s	title:MiniLibX
@@ -159,6 +156,7 @@ ammend_list	gnl/get_next_line_bonus.c	/^void	ammend_list(t_line **head)$/;"	f	ty
 append	gnl/get_next_line.c	/^void	append(char *ret, t_line **head)$/;"	f	typeref:typename:void
 append	gnl/get_next_line_bonus.c	/^void	append(char *ret, t_line **head)$/;"	f	typeref:typename:void
 at_exit	minilibx-linux/test/run_tests.sh	/^at_exit() {$/;"	f
+base_image	includes/so_long.h	/^	void	*base_image;$/;"	m	struct:s_character	typeref:typename:void *
 bpp	minilibx-linux/mlx_int.h	/^	int				bpp;$/;"	m	struct:s_img	typeref:typename:int
 bpp1	minilibx-linux/test/main.c	/^int	bpp1;$/;"	v	typeref:typename:int
 bpp2	minilibx-linux/test/main.c	/^int	bpp2;$/;"	v	typeref:typename:int
@@ -174,11 +172,14 @@ clean	minilibx-linux/configure	/^clean(){$/;"	f
 clean	minilibx-linux/test/Makefile.mk	/^clean:$/;"	t
 cmap	minilibx-linux/mlx_int.h	/^	Colormap	cmap;$/;"	m	struct:s_xvar	typeref:typename:Colormap
 col	minilibx-linux/mlx_int.h	/^	int		col;$/;"	m	struct:s_xpm_col	typeref:typename:int
+collectable_image	includes/so_long.h	/^	void	*collectable_image;$/;"	m	struct:s_character	typeref:typename:void *
+collected_count	includes/so_long.h	/^	int	collected_count;$/;"	m	struct:s_character	typeref:typename:int
 color	minilibx-linux/mlx_int.h	/^	int		color;$/;"	m	struct:s_col_name	typeref:typename:int
 color_map_1	minilibx-linux/test/main.c	/^int	color_map_1(void *win,int w,int h)$/;"	f	typeref:typename:int
 color_map_2	minilibx-linux/test/main.c	/^int	color_map_2(unsigned char *data,int bpp,int sl,int w,int h,int endian, int type)$/;"	f	typeref:typename:int
 content	gnl/get_next_line.h	/^	char			*content;$/;"	m	struct:t_head	typeref:typename:char *
 content	gnl/get_next_line_bonus.h	/^	char			*content;$/;"	m	struct:t_head	typeref:typename:char *
+correct_map	valid_check.c	/^void	correct_map(t_list *var, int x, int y)$/;"	f	typeref:typename:void
 count_max	gnl/get_next_line_utils.c	/^int	count_max(t_line *head)$/;"	f	typeref:typename:int
 count_max	gnl/get_next_line_utils_bonus.c	/^int	count_max(t_line *head)$/;"	f	typeref:typename:int
 cpy_line	gnl/get_next_line_utils.c	/^void	cpy_line(t_line *head, char *ret)$/;"	f	typeref:typename:void
@@ -192,6 +193,7 @@ dealloc	gnl/get_next_line_utils.c	/^void	dealloc(t_line **head, t_line *clean_no
 dealloc	gnl/get_next_line_utils_bonus.c	/^void	dealloc(t_line **head, t_line *clean_node, char *buf)$/;"	f	typeref:typename:void
 decrgb	minilibx-linux/mlx_int.h	/^	int			decrgb[6];$/;"	m	struct:s_xvar	typeref:typename:int[6]
 depth	minilibx-linux/mlx_int.h	/^	int			depth;$/;"	m	struct:s_xvar	typeref:typename:int
+destroy	error_handle.c	/^void	destroy(t_list *var)$/;"	f	typeref:typename:void
 display	minilibx-linux/mlx_int.h	/^	Display		*display;$/;"	m	struct:s_xvar	typeref:typename:Display *
 do_configure	minilibx-linux/Makefile	/^do_configure	:$/;"	t
 do_flush	minilibx-linux/mlx_int.h	/^	int			do_flush;$/;"	m	struct:s_xvar	typeref:typename:int
@@ -200,13 +202,18 @@ endian1	minilibx-linux/test/main.c	/^int	endian1;$/;"	v	typeref:typename:int
 endian2	minilibx-linux/test/main.c	/^int	endian2;$/;"	v	typeref:typename:int
 endian3	minilibx-linux/test/main.c	/^int	endian3;$/;"	v	typeref:typename:int
 endian4	minilibx-linux/test/main.c	/^int	endian4;$/;"	v	typeref:typename:int
+error_handle	error_handle.c	/^int	error_handle(char *param, int err)$/;"	f	typeref:typename:int
+exit_image	includes/so_long.h	/^	void	*exit_image;$/;"	m	struct:s_character	typeref:typename:void *
 expose_hook	minilibx-linux/mlx_int.h	/^	int					(*expose_hook)();$/;"	m	struct:s_win_list	typeref:typename:int (*)()
 expose_param	minilibx-linux/mlx_int.h	/^	void				*expose_param;$/;"	m	struct:s_win_list	typeref:typename:void *
 expose_win1	minilibx-linux/test/main.c	/^int	expose_win1(void *p)$/;"	f	typeref:typename:int
 expose_win2	minilibx-linux/test/main.c	/^int	expose_win2(void *p)$/;"	f	typeref:typename:int
 fclean	Makefile	/^fclean: clean$/;"	t
-fd	includes/so_long.h	/^	int	fd;$/;"	m	struct:s_character	typeref:typename:int
+filepath	includes/so_long.h	/^	char	*filepath;$/;"	m	struct:s_character	typeref:typename:char *
+fill_map	map.c	/^char	**fill_map(char *filepath, int num, char *mline, t_list **var)$/;"	f	typeref:typename:char **
 format	minilibx-linux/mlx_int.h	/^	int				format;$/;"	m	struct:s_img	typeref:typename:int
+free_all	error_handle.c	/^void	free_all(t_list *var)$/;"	f	typeref:typename:void
+ft_strlen	map.c	/^int	ft_strlen(char	*str)$/;"	f	typeref:typename:int
 full_line	gnl/get_next_line.c	/^char	*full_line(t_line *head)$/;"	f	typeref:typename:char *
 full_line	gnl/get_next_line_bonus.c	/^char	*full_line(t_line *head)$/;"	f	typeref:typename:char *
 gc	minilibx-linux/mlx_int.h	/^	GC					gc;$/;"	m	struct:s_win_list	typeref:typename:GC
@@ -228,6 +235,7 @@ im2	minilibx-linux/test/main.c	/^void	*im2;$/;"	v	typeref:typename:void *
 im3	minilibx-linux/test/main.c	/^void	*im3;$/;"	v	typeref:typename:void *
 im4	minilibx-linux/test/main.c	/^void	*im4;$/;"	v	typeref:typename:void *
 image	minilibx-linux/mlx_int.h	/^	XImage			*image;$/;"	m	struct:s_img	typeref:typename:XImage *
+image_parse	mapcreate.c	/^void	image_parse(t_list *var)$/;"	f	typeref:typename:void
 img_height	includes/so_long.h	/^	int	img_height;$/;"	m	struct:s_character	typeref:typename:int
 img_width	includes/so_long.h	/^	int	img_width;$/;"	m	struct:s_character	typeref:typename:int
 key_hook	minilibx-linux/mlx_int.h	/^	int					(*key_hook)();$/;"	m	struct:s_win_list	typeref:typename:int (*)()
@@ -249,7 +257,10 @@ main	minilibx-linux/configure	/^main(){$/;"	f
 main	minilibx-linux/test/main.c	/^int	main()$/;"	f	typeref:typename:int
 main	minilibx-linux/test/new_win.c	/^int main()$/;"	f	typeref:typename:int
 main	minilibx-linux/test/run_tests.sh	/^main(){$/;"	f
-map	includes/so_long.h	/^	char	**map;$/;"	m	struct:s_character	typeref:typename:char **
+manage_map	mapcreate.c	/^void	manage_map(t_list *var, int i, int j)$/;"	f	typeref:typename:void
+map_height	includes/so_long.h	/^	int	map_height;$/;"	m	struct:s_character	typeref:typename:int
+map_width	includes/so_long.h	/^	int	map_width;$/;"	m	struct:s_character	typeref:typename:int
+mapz	includes/so_long.h	/^	char	**mapz;$/;"	m	struct:s_character	typeref:typename:char **
 mask	minilibx-linux/mlx_int.h	/^	int		mask;$/;"	m	struct:s_event_list	typeref:typename:int
 mlx	minilibx-linux/test/main.c	/^void	*mlx;$/;"	v	typeref:typename:void *
 mlx	minilibx-linux/test/new_win.c	/^void *mlx;$/;"	v	typeref:typename:void *
@@ -327,6 +338,7 @@ mouse_param	minilibx-linux/mlx_int.h	/^	void				*mouse_param;$/;"	m	struct:s_win
 mouse_win1	minilibx-linux/test/main.c	/^int	mouse_win1(int button,int x,int y, void *p)$/;"	f	typeref:typename:int
 mouse_win2	minilibx-linux/test/main.c	/^int	mouse_win2(int button,int x,int y, void *p)$/;"	f	typeref:typename:int
 mouse_win3	minilibx-linux/test/main.c	/^int	mouse_win3(int x,int y, void *p)$/;"	f	typeref:typename:int
+move_character	valid_check.c	/^void	move_character(t_list *var, int direction)$/;"	f	typeref:typename:void
 name	minilibx-linux/mlx_int.h	/^	char	*name;$/;"	m	struct:s_col_name	typeref:typename:char *
 name	minilibx-linux/mlx_int.h	/^	int		name;$/;"	m	struct:s_xpm_col	typeref:typename:int
 next	gnl/get_next_line.h	/^	struct t_head	*next;$/;"	m	struct:t_head	typeref:struct:t_head *
@@ -336,11 +348,16 @@ no_newline	gnl/get_next_line_utils.c	/^int	no_newline(t_line *head)$/;"	f	typere
 no_newline	gnl/get_next_line_utils_bonus.c	/^int	no_newline(t_line *head)$/;"	f	typeref:typename:int
 param	minilibx-linux/mlx_int.h	/^	void	*param;$/;"	m	struct:s_event_list	typeref:typename:void *
 parse_args	minilibx-linux/configure	/^parse_args(){$/;"	f
-parse_map	map.c	/^char	**parse_map(int fd)$/;"	f	typeref:typename:char **
+parse_map	map.c	/^void	parse_map(char *filepath, t_list **var)$/;"	f	typeref:typename:void
 pix	minilibx-linux/mlx_int.h	/^	Pixmap			pix;$/;"	m	struct:s_img	typeref:typename:Pixmap
 pop_data	main.c	/^void	pop_data(t_list *var, char **av)$/;"	f	typeref:typename:void
 private_cmap	minilibx-linux/mlx_int.h	/^	int			private_cmap;$/;"	m	struct:s_xvar	typeref:typename:int
 pshm_format	minilibx-linux/mlx_int.h	/^	int			pshm_format;$/;"	m	struct:s_xvar	typeref:typename:int
+put_base	pieces.c	/^int	put_base(t_list *var)$/;"	f	typeref:typename:int
+put_collectable	pieces.c	/^int	put_collectable(t_list *var)$/;"	f	typeref:typename:int
+put_exit	pieces.c	/^int	put_exit(t_list *var)$/;"	f	typeref:typename:int
+put_player	pieces.c	/^int	put_player(t_list *var)$/;"	f	typeref:typename:int
+put_wall	pieces.c	/^int	put_wall(t_list *var)$/;"	f	typeref:typename:int
 re	Makefile	/^re: fclean all$/;"	t
 re	minilibx-linux/Makefile	/^re	: clean all$/;"	t
 re	minilibx-linux/test/Makefile.mk	/^re: clean all$/;"	t
@@ -383,6 +400,7 @@ type	minilibx-linux/mlx_int.h	/^	int				type;$/;"	m	struct:s_img	typeref:typenam
 update_and_render	main.c	/^int	update_and_render(void *param)$/;"	f	typeref:typename:int
 use_xshm	minilibx-linux/mlx_int.h	/^	int			use_xshm;$/;"	m	struct:s_xvar	typeref:typename:int
 visual	minilibx-linux/mlx_int.h	/^	Visual		*visual;$/;"	m	struct:s_xvar	typeref:typename:Visual *
+wall_image	includes/so_long.h	/^	void	*wall_image;$/;"	m	struct:s_character	typeref:typename:void *
 width	minilibx-linux/mlx_int.h	/^	int				width;$/;"	m	struct:s_img	typeref:typename:int
 win	includes/so_long.h	/^	void    *win;$/;"	m	struct:s_list	typeref:typename:void *
 win1	minilibx-linux/test/main.c	/^void	*win1;$/;"	v	typeref:typename:void *
