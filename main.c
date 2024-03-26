@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 06:45:16 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/26 11:16:51 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/26 11:37:51 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,12 @@
 
 int	update_and_render(void *param)
 {
-	t_list	*var = (t_list *)param;
-	int	i;
-	int	j;
+	t_list	*var;
+	int		i;
+	int		j;
 
 	i = 0;
+	var = (t_list *)param;
 	while (i < (var->character->map_height / var->character->img_height))
 	{
 		j = 0;
@@ -53,7 +54,6 @@ int	handle_keypress(int keycode, t_list *var)
 		move_character(var, keycode, new_x, new_y);
 	if (keycode == XK_d)
 		move_character(var, keycode, new_x, new_y);
-
 	return (0);
 }
 
@@ -61,7 +61,7 @@ void	collect_list(t_list **var)
 {
 	int	i;
 	int	k;
-	
+
 	i = 0;
 	k = 0;
 	while ((*var)->character->mapz[i][k])
@@ -100,9 +100,9 @@ void	pop_data(t_list *var, char **av)
 
 int	main(int ac, char **av)
 {
-	t_list	*var;
+	t_list		*var;
 	t_character	*character;
-	
+
 	if (ac != 2)
 		return (1);
 	var = malloc(sizeof(t_list));
@@ -113,7 +113,7 @@ int	main(int ac, char **av)
 	var->character = character;
 	pop_data(var, av);
 	var->win = mlx_new_window(var->mlx_conn, var->character->map_width,
-			var->character->map_height, "So_long"); 
+			var->character->map_height, "So_long");
 	mlx_key_hook(var->win, handle_keypress, var);
 	mlx_loop_hook(var->mlx_conn, update_and_render, var);
 	mlx_loop(var->mlx_conn);

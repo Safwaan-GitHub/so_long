@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 15:40:27 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/26 10:08:02 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/26 11:39:34 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	manage_map(t_list *var, int i, int j)
 
 void	image_parse(t_list *var)
 {
-	var->character->character_image	= mlx_xpm_file_to_image(var->mlx_conn,
+	var->character->character_image = mlx_xpm_file_to_image(var->mlx_conn,
 			"imgs/basechar.xpm", &(var->character->img_width),
 			&(var->character->img_height));
 	var->character->wall_image = mlx_xpm_file_to_image(var->mlx_conn,
@@ -65,7 +65,7 @@ void	image_parse(t_list *var)
 	var->character->collectable_image = mlx_xpm_file_to_image(var->mlx_conn,
 			"imgs/basecol.xpm", &(var->character->img_width),
 			&(var->character->img_height));
-	var->character->exit_image= mlx_xpm_file_to_image(var->mlx_conn,
+	var->character->exit_image = mlx_xpm_file_to_image(var->mlx_conn,
 			"imgs/exit.xpm", &(var->character->img_width),
 			&(var->character->img_height));
 }

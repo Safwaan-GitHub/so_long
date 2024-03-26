@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 18:14:28 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/26 11:19:00 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/26 11:38:43 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	parse_map(char *filepath, t_list **var)
 	while (map)
 	{
 		if (map == NULL)
-			break;
+			break ;
 		num++;
 		free(map);
 		map = get_next_line(fd);
@@ -42,8 +42,8 @@ void	parse_map(char *filepath, t_list **var)
 char	**fill_map(char *filepath, int num, char *mline, t_list **var)
 {
 	char	**map;
-	int	fd;
-	int	i;
+	int		fd;
+	int		i;
 
 	i = 0;
 	fd = open(filepath, O_RDONLY);
