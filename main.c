@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 06:45:16 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/26 11:37:51 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/26 12:15:26 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	handle_keypress(int keycode, t_list *var)
 	{
 		destroy(var);
 		free_all(var);
-		printf("ESC key pressed. Exiting...\n");
+		write(1, "ESC key pressed. Exiting...", 28);
 		exit(0);
 	}
 	if (keycode == XK_w)
@@ -90,6 +90,8 @@ void	pop_data(t_list *var, char **av)
 {
 	var->character->filepath = av[1];
 	var->character->character_image = NULL;
+	var->character->collect_count = 0;
+	var->character->move_count = 0;
 	image_parse(var);
 	parse_map(var->character->filepath, &var);
 	if (var->character->character_image == NULL)

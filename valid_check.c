@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 08:39:33 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/26 11:31:19 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/26 12:17:41 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,13 @@ void	move_character(t_list *var, int direction, int new_x, int new_y)
 	new_x = var->character->x;
 	new_y = var->character->y;
 	if (direction == XK_d)
-	{
 		new_x += 64;
-		printf("[%d][%d]: moving right\n", new_x, new_y);
-	}
 	if (direction == XK_a)
-	{
 		new_x -= 64;
-		printf("[%d][%d]: moving left\n", new_x, new_y);
-	}
 	if (direction == XK_w)
-	{
 		new_y -= 64;
-		printf("[%d][%d]: moving up\n", new_x, new_y);
-	}
 	if (direction == XK_s)
-	{
 		new_y += 64;
-		printf("[%d][%d]: moving down\n", new_x, new_y);
-	}
 	correct_map(var, new_x, new_y);
 }
 
@@ -57,7 +45,7 @@ void	replace_tiles(t_list *var, int x, int y)
 	{
 		destroy(var);
 		free_all(var);
-		printf("Game Complete\n");
+		write(1, "Game Complete", 13);
 		exit(0);
 	}
 	var->character->mapz[var->character->prev_y]
@@ -83,7 +71,6 @@ void	correct_map(t_list *var, int x, int y)
 			[var->character->map_x] != '1'))
 	{
 		var->character->move_count++;
-		printf("%d\n", var->character->move_count);
 		replace_tiles(var, x, y);
 	}
 }
