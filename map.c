@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 18:14:28 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/25 20:01:09 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/26 11:19:00 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,13 @@ int	ft_strlen(char	*str)
 	while (str[i])
 		i++;
 	return (i - 1);
+}
+
+int	count_coll(t_list *var)
+{
+	if (var->character->check == 1)
+	{
+		return (1);
+	}
+	return (0);
 }

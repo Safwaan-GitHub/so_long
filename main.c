@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 06:45:16 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/25 21:25:00 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/26 11:16:51 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,9 @@ int	update_and_render(void *param)
 
 int	handle_keypress(int keycode, t_list *var)
 {
+	int	new_x;
+	int	new_y;
+
 	if (keycode == XK_Escape)
 	{
 		destroy(var);
@@ -43,38 +46,42 @@ int	handle_keypress(int keycode, t_list *var)
 		exit(0);
 	}
 	if (keycode == XK_w)
-		move_character(var, keycode);
+		move_character(var, keycode, new_x, new_y);
 	if (keycode == XK_s)
-		move_character(var, keycode);
+		move_character(var, keycode, new_x, new_y);
 	if (keycode == XK_a)
-		move_character(var, keycode);
+		move_character(var, keycode, new_x, new_y);
 	if (keycode == XK_d)
-		move_character(var, keycode);
+		move_character(var, keycode, new_x, new_y);
 
 	return (0);
 }
 
 void	collect_list(t_list **var)
 {
-	char	**map;
 	int	i;
 	int	k;
-
+	
 	i = 0;
-	map = (*var)->character->mapz;
-	while (map[i][k])
+	k = 0;
+	while ((*var)->character->mapz[i][k])
 	{
 		k = 0;
-		while (map[i][k])
+		while ((*var)->character->mapz[i][k])
 		{
-			printf("[%d]: collect_count\n", (*var)->character->collect_count);
-			if (map[i][k] == 'C')
+			if ((*var)->character->mapz[i][k] == 'C')
 				(*var)->character->collect_count++;
+			if ((*var)->character->mapz[i][k] == 'E')
+			{
+				(*var)->character->exit_cox = k;
+				(*var)->character->exit_coy = i;
+				(*var)->character->mapz[i][k] = '0';
+			}
 			k++;
 		}
 		i++;
 		k = 0;
-		if (map[i] == NULL)
+		if ((*var)->character->mapz[i] == NULL)
 			return ;
 	}
 }

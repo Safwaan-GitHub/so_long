@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 16:45:04 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/25 20:01:50 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/26 11:29:32 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,20 @@ typedef struct s_character
 {
 	int	x;
 	int	y;
+	int	exit_cox;
+	int	exit_coy;
+	int	prev_x;
+	int	prev_y;
+	int	map_x;
+	int	map_y;
 	int	orig_x;
 	int	orig_y;
 	int	img_width;
 	int	img_height;
 	int	map_width;
 	int	map_height;
+	int	check;
+	int	move_count;
 	int	collect_count;
 	char	*filepath;
 	char	**mapz;
@@ -60,10 +68,12 @@ void    manage_map(t_list *var, int i, int j);
 void    image_parse(t_list *var);
 void    destroy(t_list *var);
 void    free_all(t_list *var);
-void    move_character(t_list *var, int direction);
+void    move_character(t_list *var, int direction, int new_x, int new_y);
 void    correct_map(t_list *var, int x, int y);
+void    replace_tiles(t_list *var, int x, int y);
 void    save_charcoords(t_list *var, int i, int j);
 void    save_coords(t_list *var, int i, int j);
 void    collect_list(t_list **var);
+int     count_coll(t_list *var);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/23 15:40:27 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/25 19:30:20 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/26 10:08:02 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,11 @@ void	manage_map(t_list *var, int i, int j)
 		put_collectable(var);
 	}
 	else if (var->character->mapz[i][j] == 'E' && var->character->mapz[i][j])
+	{
 		save_coords(var, i, j);
+		if (count_coll(var))
+			put_exit(var);
+	}
 	else if (var->character->mapz[i][j] == 'P' && var->character->mapz[i][j])
 		save_charcoords(var, i, j);
 }
