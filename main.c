@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 06:45:16 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/26 12:15:26 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/27 22:25:12 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,10 @@ void	pop_data(t_list *var, char **av)
 	var->character->character_image = NULL;
 	var->character->collect_count = 0;
 	var->character->move_count = 0;
+	var->character->num = 0;
+	var->character->nm_ofcolls = 0;
+	var->character->nm_ofexits = 0;
+	var->character->nm_ofplayers = 0;
 	image_parse(var);
 	parse_map(var->character->filepath, &var);
 	if (var->character->character_image == NULL)

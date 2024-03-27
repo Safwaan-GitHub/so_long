@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 08:39:33 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/26 12:17:41 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/27 22:32:02 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,9 @@ void	replace_tiles(t_list *var, int x, int y)
 
 void	correct_map(t_list *var, int x, int y)
 {
+	char	*tstr;
+
+	tstr = NULL;
 	var->character->map_x = x / 64;
 	var->character->map_y = y / 64;
 	var->character->prev_x = var->character->x / 64;
@@ -71,6 +74,39 @@ void	correct_map(t_list *var, int x, int y)
 			[var->character->map_x] != '1'))
 	{
 		var->character->move_count++;
+		tstr = ft_itoa(var->character->move_count);
+		write(1, tstr, ft_strlen(tstr) + 1);
+		write(1, "\n", 1);
+		free(tstr);
 		replace_tiles(var, x, y);
 	}
+}
+
+int	verify_dfs(t_list *var, char **mapz, int i, int k)
+{
+	if (var->character->nm_ofcolls < 1
+		|| var->character->nm_ofexits != 1
+		|| var->character->nm_ofplayers != 1)
+		return (1);
+	while (mapz[i][k])
+	{
+		k = 0;
+		while (mapz[i][k])
+		{
+			if (mapz[i][k] == 'C')
+				return (1);
+			if (mapz[i][k] == 'E')
+				return (1);
+			if (mapz[i][k] == 'P')
+				return (1);
+			if (mapz[i][k] == '0')
+				return (1);
+			k++;
+		}
+		i++;
+		k = 0;
+		if (mapz[i] == NULL)
+			return (0);
+	}
+	return (0);
 }
