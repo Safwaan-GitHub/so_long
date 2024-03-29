@@ -38,6 +38,9 @@ void	destroy(t_list *var)
 	mlx_destroy_image(var->mlx_conn, var->character->base_image);
 	mlx_destroy_image(var->mlx_conn, var->character->collectable_image);
 	mlx_destroy_image(var->mlx_conn, var->character->exit_image);
+	mlx_destroy_image(var->mlx_conn, var->character->em1);
+	mlx_destroy_image(var->mlx_conn, var->character->em2);
+	mlx_destroy_image(var->mlx_conn, var->character->em3);
 	mlx_destroy_window(var->mlx_conn, var->win);
 	mlx_destroy_display(var->mlx_conn);
 }

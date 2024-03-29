@@ -16,7 +16,8 @@ CFLAGS = -Wall -Wextra -Werror -g
 CSOURCE = main.c map.c gnl/get_next_line.c \
 	  gnl/get_next_line_utils.c error_handle.c \
 	  pieces.c mapcreate.c valid_check.c \
-	  ft_itoa.c map_check.c ft_strdup.c
+	  ft_itoa.c map_check.c ft_strdup.c \
+	  pieces2.c 
 
 OSOURCE = $(CSOURCE:.c = .o)
 

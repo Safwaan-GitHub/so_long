@@ -49,6 +49,8 @@ void	manage_map(t_list *var, int i, int j)
 	}
 	else if (var->character->mapz[i][j] == 'P' && var->character->mapz[i][j])
 		save_charcoords(var, i, j);
+	else if (var->character->mapz[i][j] == 'Z' && var->character->mapz[i][j])
+		manage_enemy(var, i, j);
 }
 
 void	image_parse(t_list *var)
@@ -67,5 +69,19 @@ void	image_parse(t_list *var)
 			&(var->character->img_height));
 	var->character->exit_image = mlx_xpm_file_to_image(var->mlx_conn,
 			"imgs/exit.xpm", &(var->character->img_width),
+			&(var->character->img_height));
+	enemy_parse(var);
+}
+
+void	enemy_parse(t_list *var)
+{
+	var->character->em1 = mlx_xpm_file_to_image(var->mlx_conn,
+			"imgs/em1b.xpm", &(var->character->img_width),
+			&(var->character->img_height));
+	var->character->em2 = mlx_xpm_file_to_image(var->mlx_conn,
+			"imgs/en2b.xpm", &(var->character->img_width),
+			&(var->character->img_height));
+	var->character->em3 = mlx_xpm_file_to_image(var->mlx_conn,
+			"imgs/em3b.xpm", &(var->character->img_width),
 			&(var->character->img_height));
 }

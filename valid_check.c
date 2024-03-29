@@ -41,12 +41,11 @@ void	replace_tiles(t_list *var, int x, int y)
 		}
 	}
 	if (var->character->mapz[var->character->map_y]
-		[var->character->map_x] == 'E')
+		[var->character->map_x] == 'E'
+		|| var->character->mapz[var->character->map_y]
+		[var->character->map_x] == 'Z')
 	{
-		destroy(var);
-		free_all(var);
-		write(1, "Game Complete", 13);
-		exit(0);
+		destroyitall(var);
 	}
 	var->character->mapz[var->character->prev_y]
 	[var->character->prev_x] = '0';
@@ -54,6 +53,14 @@ void	replace_tiles(t_list *var, int x, int y)
 	var->character->y = y;
 	var->character->mapz[var->character->map_y]
 	[var->character->map_x] = 'P';
+}
+
+void	destroyitall(t_list *var)
+{
+		destroy(var);
+		free_all(var);
+		write(1, "Game End", 8);
+		exit(0);
 }
 
 void	correct_map(t_list *var, int x, int y)
@@ -79,6 +86,7 @@ void	correct_map(t_list *var, int x, int y)
 		write(1, "\n", 1);
 		free(tstr);
 		replace_tiles(var, x, y);
+		var->character->screen_count++;
 	}
 }
 

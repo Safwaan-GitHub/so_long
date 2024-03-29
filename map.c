@@ -85,3 +85,21 @@ int	count_coll(t_list *var)
 	}
 	return (0);
 }
+
+void	display_moves(t_list *var, int moves)
+{
+	char *moves_str;
+	int x;
+	int y;
+
+	x = 10;
+	y = 20;
+	moves_str = ft_itoa(moves);
+	if (moves_str != NULL)
+	{
+		mlx_string_put(var->mlx_conn, var->win, x, y + 15, 0xFF0000, "Count = ");
+		mlx_string_put(var->mlx_conn, var->win, x + 50, y + 15, 0xFFFFFF, moves_str);
+		free(moves_str);
+	}
+}
+

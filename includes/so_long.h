@@ -45,6 +45,7 @@ typedef struct s_character
 	int		check;
 	int		move_count;
 	int		collect_count;
+	int		screen_count;
 	char	*filepath;
 	char	**mapz;
 	char	**char_pos;
@@ -52,6 +53,9 @@ typedef struct s_character
 	void	*wall_image;
 	void	*base_image;
 	void	*exit_image;
+	void	*em1;
+	void	*em2;
+	void	*em3;
 	void	*collectable_image;
 }	t_character;
 
@@ -79,6 +83,7 @@ int		isxwallvalid(t_list *var);
 int		isxtopbottom(t_list *var);
 int		verify_dfs(t_list *var, char **mapz, int i, int k);
 int		ismidwallvalid(t_list *var);
+int		put_enemy(t_list *var);
 void	map_check(t_list *var, int i, char **mapz);
 void	parse_map(char *filepath, t_list **var);
 void	manage_map(t_list *var, int i, int j);
@@ -89,11 +94,15 @@ void	destroy(t_list *var);
 void	free_all(t_list *var);
 void	move_character(t_list *var, int direction, int new_x, int new_y);
 void	correct_map(t_list *var, int x, int y);
+void    display_moves(t_list *var, int moves);
 void	replace_tiles(t_list *var, int x, int y);
 void	error_pass(t_list *var);
 void	save_charcoords(t_list *var, int i, int j);
 void	save_coords(t_list *var, int i, int j);
 void	collect_list(t_list **var);
 void	check_path(t_list **var);
+void    enemy_parse(t_list *var);
+void    manage_enemy(t_list *var, int i, int j);
+void    destroyitall(t_list *var);
 
 #endif

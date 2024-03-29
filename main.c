@@ -31,6 +31,7 @@ int	update_and_render(void *param)
 		i++;
 	}
 	put_player(var);
+	display_moves(var, var->character->screen_count);
 	return (0);
 }
 
@@ -90,6 +91,10 @@ void	pop_data(t_list *var, char **av)
 {
 	var->character->filepath = av[1];
 	var->character->character_image = NULL;
+	var->character->em1 = NULL;
+	var->character->em2 = NULL;
+	var->character->em3 = NULL;
+	var->character->screen_count = 0;
 	var->character->collect_count = 0;
 	var->character->move_count = 0;
 	var->character->num = 0;
