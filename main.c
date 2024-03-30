@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 06:45:16 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/27 22:25:12 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/30 15:26:04 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,8 @@ int	main(int ac, char **av)
 	var->win = mlx_new_window(var->mlx_conn, var->character->map_width,
 			var->character->map_height, "So_long");
 	mlx_key_hook(var->win, handle_keypress, var);
+	mlx_hook(var->win, DestroyNotify, ButtonReleaseMask, &destroyitall,
+		(void *)var);
 	mlx_loop_hook(var->mlx_conn, update_and_render, var);
 	mlx_loop(var->mlx_conn);
 }

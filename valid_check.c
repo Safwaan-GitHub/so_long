@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 08:39:33 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/30 12:49:21 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/30 15:23:18 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ void	replace_tiles(t_list *var, int x, int y)
 		|| var->character->mapz[var->character->map_y]
 		[var->character->map_x] == 'Z')
 	{
-		destroyitall(var);
+		if (destroyitall((void *)var))
+			;
 	}
 	var->character->mapz[var->character->prev_y]
 	[var->character->prev_x] = '0';
@@ -55,8 +56,11 @@ void	replace_tiles(t_list *var, int x, int y)
 	[var->character->map_x] = 'P';
 }
 
-void	destroyitall(t_list *var)
+int	destroyitall(void *param)
 {
+	t_list	*var;
+
+	var = (t_list *)param;
 	destroy(var);
 	free_all(var);
 	write(1, "Game End", 8);
