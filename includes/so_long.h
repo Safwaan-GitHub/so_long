@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 16:45:04 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/27 22:33:22 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/30 12:51:02 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,15 +94,15 @@ void	destroy(t_list *var);
 void	free_all(t_list *var);
 void	move_character(t_list *var, int direction, int new_x, int new_y);
 void	correct_map(t_list *var, int x, int y);
-void    display_moves(t_list *var, int moves);
+void	display_moves(t_list *var, int moves);
 void	replace_tiles(t_list *var, int x, int y);
 void	error_pass(t_list *var);
 void	save_charcoords(t_list *var, int i, int j);
 void	save_coords(t_list *var, int i, int j);
 void	collect_list(t_list **var);
 void	check_path(t_list **var);
-void    enemy_parse(t_list *var);
-void    manage_enemy(t_list *var, int i, int j);
-void    destroyitall(t_list *var);
+void	enemy_parse(t_list *var);
+void	manage_enemy(t_list *var, int i, int j);
+void	destroyitall(t_list *var);
 
 #endif
