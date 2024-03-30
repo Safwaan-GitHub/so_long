@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 18:14:28 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/27 22:10:55 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/30 12:45:56 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,18 +88,19 @@ int	count_coll(t_list *var)
 
 void	display_moves(t_list *var, int moves)
 {
-	char *moves_str;
-	int x;
-	int y;
+	char	*moves_str;
+	int		x;
+	int		y;
 
 	x = 10;
 	y = 20;
 	moves_str = ft_itoa(moves);
 	if (moves_str != NULL)
 	{
-		mlx_string_put(var->mlx_conn, var->win, x, y + 15, 0xFF0000, "Count = ");
-		mlx_string_put(var->mlx_conn, var->win, x + 50, y + 15, 0xFFFFFF, moves_str);
+		mlx_string_put(var->mlx_conn, var->win, x, y + 15,
+			0xFF0000, "Count = ");
+		mlx_string_put(var->mlx_conn, var->win, x + 50, y + 15,
+			0xFFFFFF, moves_str);
 		free(moves_str);
 	}
 }
-

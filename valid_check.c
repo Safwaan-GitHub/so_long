@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 08:39:33 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/27 22:32:02 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/03/30 12:49:21 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,10 @@ void	replace_tiles(t_list *var, int x, int y)
 
 void	destroyitall(t_list *var)
 {
-		destroy(var);
-		free_all(var);
-		write(1, "Game End", 8);
-		exit(0);
+	destroy(var);
+	free_all(var);
+	write(1, "Game End", 8);
+	exit(0);
 }
 
 void	correct_map(t_list *var, int x, int y)
