@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 16:45:04 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/30 15:24:54 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/04/02 15:06:56 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,5 +104,6 @@ void	collect_list(t_list **var);
 void	check_path(t_list **var);
 void	enemy_parse(t_list *var);
 void	manage_enemy(t_list *var, int i, int j);
+void    poscheck(t_list *var, int x, int y);
 
 #endif

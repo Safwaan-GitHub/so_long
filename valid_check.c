@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 08:39:33 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/30 15:23:18 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/04/02 15:01:42 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,7 @@ void	replace_tiles(t_list *var, int x, int y)
 		if (destroyitall((void *)var))
 			;
 	}
-	var->character->mapz[var->character->prev_y]
-	[var->character->prev_x] = '0';
-	var->character->x = x;
-	var->character->y = y;
-	var->character->mapz[var->character->map_y]
-	[var->character->map_x] = 'P';
+	poscheck(var, x, y);
 }
 
 int	destroyitall(void *param)

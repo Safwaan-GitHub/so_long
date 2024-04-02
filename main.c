@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/18 06:45:16 by sanoor            #+#    #+#             */
-/*   Updated: 2024/03/30 15:26:04 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/04/02 15:08:55 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,9 @@ void	pop_data(t_list *var, char **av)
 	var->character->em3 = NULL;
 	var->character->screen_count = 0;
 	var->character->collect_count = 0;
+	var->character->check = 0;
+	var->character->player_cox = 0;
+	var->character->player_coy = 0;
 	var->character->move_count = 0;
 	var->character->num = 0;
 	var->character->nm_ofcolls = 0;

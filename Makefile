@@ -6,7 +6,7 @@
 #    By: sanoor <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/18 06:56:37 by sanoor            #+#    #+#              #
-#    Updated: 2024/03/27 22:12:32 by sanoor           ###   ########.fr        #
+#    Updated: 2024/04/02 15:07:21 by sanoor           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CSOURCE = main.c map.c gnl/get_next_line.c \
 	  gnl/get_next_line_utils.c error_handle.c \
 	  pieces.c mapcreate.c valid_check.c \
 	  ft_itoa.c map_check.c ft_strdup.c \
-	  pieces2.c 
+	  pieces2.c poscheck.c
 
 OSOURCE = $(CSOURCE:.c = .o)
 
