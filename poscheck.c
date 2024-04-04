@@ -6,11 +6,26 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 14:58:31 by sanoor            #+#    #+#             */
-/*   Updated: 2024/04/02 15:11:26 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/04/04 15:06:04 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/so_long.h"
+
+int	is_threelines(t_list *var)
+{
+	int	i;
+
+	i = 0;
+	if (var->character->mapz == NULL)
+		return (1);
+	while (var->character->mapz[i] )
+	{
+		if (var->character->mapz[++i] == NULL && i < 3)
+			return (1);
+	}
+	return (0);
+}
 
 void	poscheck(t_list *var, int x, int y)
 {

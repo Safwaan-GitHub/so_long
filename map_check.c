@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:33:23 by sanoor            #+#    #+#             */
-/*   Updated: 2024/04/02 14:33:58 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/04/04 16:23:41 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ void	map_check(t_list *var, int i, char **mapz)
 	int	is_xwall;
 	int	is_midwall;
 
+	if (is_threelines(var))
+		error_pass(var);
 	is_xwall = isxtopbottom(var);
 	is_midwall = ismidwallvalid(var);
 	mapz = malloc(sizeof(char *) * (var->character->nm_oflines + 2));
@@ -89,22 +91,22 @@ void	dfs(t_list *var, char **mapz, int x, int y)
 {
 	if (y == 0 && x == 0)
 		return ;
-	if (mapz[y - 1][x] != '1')
+	if (mapz[y - 1][x] != '1' && mapz[y - 1][x] != 'Z')
 	{
 		mapz[y - 1][x] = '1';
 		dfs(var, mapz, x, y - 1);
 	}
-	if (mapz[y][x + 1] != '1')
+	if (mapz[y][x + 1] != '1' && mapz[y][x + 1] != 'Z')
 	{
 		mapz[y][x + 1] = '1';
 		dfs(var, mapz, x + 1, y);
 	}
-	if (mapz[y + 1][x] != '1')
+	if (mapz[y + 1][x] != '1' && mapz[y + 1][x] != 'Z')
 	{
 		mapz[y + 1][x] = '1';
 		dfs(var, mapz, x, y + 1);
 	}
-	if (mapz[y][x - 1] != '1')
+	if (mapz[y][x - 1] != '1' && mapz[y][x - 1] != 'Z')
 	{
 		mapz[y][x - 1] = '1';
 		dfs(var, mapz, x - 1, y);

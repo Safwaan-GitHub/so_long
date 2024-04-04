@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 16:45:04 by sanoor            #+#    #+#             */
-/*   Updated: 2024/04/02 15:06:56 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/04/04 15:17:58 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ int		verify_dfs(t_list *var, char **mapz, int i, int k);
 int		ismidwallvalid(t_list *var);
 int		put_enemy(t_list *var);
 int		destroyitall(void *param);
+int 	is_threelines(t_list *var);
 void	map_check(t_list *var, int i, char **mapz);
 void	parse_map(char *filepath, t_list **var);
 void	manage_map(t_list *var, int i, int j);
@@ -105,5 +106,6 @@ void	check_path(t_list **var);
 void	enemy_parse(t_list *var);
 void	manage_enemy(t_list *var, int i, int j);
 void    poscheck(t_list *var, int x, int y);
+void    free_some(t_list *var, char **map, char *mline);
 
 #endif
