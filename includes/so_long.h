@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 16:45:04 by sanoor            #+#    #+#             */
-/*   Updated: 2024/04/04 15:17:58 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/04/04 16:37:42 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct s_character
 	int		exit_coy;
 	int		prev_x;
 	int		prev_y;
+	int		unknown;
 	int		map_x;
 	int		map_y;
 	int		orig_x;

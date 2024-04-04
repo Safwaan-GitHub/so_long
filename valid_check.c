@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 08:39:33 by sanoor            #+#    #+#             */
-/*   Updated: 2024/04/02 15:01:42 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/04/04 17:03:49 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,8 @@ int	verify_dfs(t_list *var, char **mapz, int i, int k)
 {
 	if (var->character->nm_ofcolls < 1
 		|| var->character->nm_ofexits != 1
-		|| var->character->nm_ofplayers != 1)
+		|| var->character->nm_ofplayers != 1
+		|| var->character->unknown == 1)
 		return (1);
 	while (mapz[i][k])
 	{
