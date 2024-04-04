@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 14:58:31 by sanoor            #+#    #+#             */
-/*   Updated: 2024/04/04 15:06:04 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/04/04 18:39:23 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ int	is_threelines(t_list *var)
 	int	i;
 
 	i = 0;
-	if (var->character->mapz == NULL)
+	if (!var->character->mapz[i] || var->character->mapz == NULL)
 		return (1);
-	while (var->character->mapz[i] )
+	while (var->character->mapz[i])
 	{
 		if (var->character->mapz[++i] == NULL && i < 3)
 			return (1);
@@ -39,3 +39,16 @@ void	poscheck(t_list *var, int x, int y)
 		var->character->mapz[var->character->exit_coy]
 		[var->character->exit_cox] = 'E';
 }
+
+int	key_check(char c, t_list *var)
+{
+	if (c != 'C' && c != 'E' && c != 'P'
+			&& c != 'Z' && c != '1'
+			&& c != '0' && c != '\n')
+	{
+		var->character->unknown++;
+		return (1);
+	}
+	return (0);
+}
+

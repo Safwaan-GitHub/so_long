@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 12:33:23 by sanoor            #+#    #+#             */
-/*   Updated: 2024/04/04 17:01:55 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/04/04 18:34:13 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,7 @@ void	dfs(t_list *var, char **mapz, int x, int y)
 
 void	playerpos(t_list *var, char **mapz, int i, int k)
 {
-	while (mapz[i][k])
+	while (mapz[i])
 	{
 		k = 0;
 		while (mapz[i][k])
@@ -131,13 +131,8 @@ void	playerpos(t_list *var, char **mapz, int i, int k)
 				var->character->player_cox = k;
 				var->character->player_coy = i;
 			}
-			if (mapz[i][k] != 'C' && mapz[i][k] != 'E' && mapz[i][k] != 'P'
-					&& mapz[i][k] != 'Z' && mapz[i][k] != '1'
-					&& mapz[i][k] != '0' && mapz[i][k] != '\n')
-			{
-				var->character->unknown++;
+			if (key_check(mapz[i][k], var))
 				return ;
-			}
 			k++;
 		}
 		i++;

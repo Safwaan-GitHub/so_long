@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 18:14:28 by sanoor            #+#    #+#             */
-/*   Updated: 2024/04/04 16:00:48 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/04/04 18:16:10 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ int	ft_strlen(char	*str)
 	int	i;
 
 	i = 0;
+	if (str == NULL)
+		return (0);
 	while (str[i])
 		i++;
 	return (i - 1);
