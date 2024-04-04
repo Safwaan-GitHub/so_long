@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/02 14:58:31 by sanoor            #+#    #+#             */
-/*   Updated: 2024/04/04 18:39:23 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/04/04 18:57:03 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,15 +40,21 @@ void	poscheck(t_list *var, int x, int y)
 		[var->character->exit_cox] = 'E';
 }
 
+int	check_ke(char c)
+{
+	if (c == '0' || c == 'E' || c == 'P' || c == 'C')
+		return (1);
+	return (0);
+}
+
 int	key_check(char c, t_list *var)
 {
 	if (c != 'C' && c != 'E' && c != 'P'
-			&& c != 'Z' && c != '1'
-			&& c != '0' && c != '\n')
+		&& c != 'Z' && c != '1'
+		&& c != '0' && c != '\n')
 	{
 		var->character->unknown++;
 		return (1);
 	}
 	return (0);
 }
-

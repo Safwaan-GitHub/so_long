@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 16:45:04 by sanoor            #+#    #+#             */
-/*   Updated: 2024/04/04 17:28:44 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/04/04 18:54:43 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,7 @@ int		put_enemy(t_list *var);
 int		destroyitall(void *param);
 int		is_threelines(t_list *var);
 int		key_check(char c, t_list *var);
+int		check_ke(char c);
 void	map_check(t_list *var, int i, char **mapz);
 void	parse_map(char *filepath, t_list **var);
 void	manage_map(t_list *var, int i, int j);

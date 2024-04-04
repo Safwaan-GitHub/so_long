@@ -6,7 +6,7 @@
 /*   By: sanoor <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 08:39:33 by sanoor            #+#    #+#             */
-/*   Updated: 2024/04/04 17:03:49 by sanoor           ###   ########.fr       */
+/*   Updated: 2024/04/04 18:57:18 by sanoor           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,13 +101,7 @@ int	verify_dfs(t_list *var, char **mapz, int i, int k)
 		k = 0;
 		while (mapz[i][k])
 		{
-			if (mapz[i][k] == 'C')
-				return (1);
-			if (mapz[i][k] == 'E')
-				return (1);
-			if (mapz[i][k] == 'P')
-				return (1);
-			if (mapz[i][k] == '0')
+			if (check_ke(mapz[i][k]))
 				return (1);
 			k++;
 		}
