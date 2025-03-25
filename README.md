@@ -50,7 +50,7 @@ The game structure and logic are carefully crafted to handle dynamic game states
 
 Contributing
 
-We welcome contributions to "So_Long: Death's Collection". Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
+Contributions are welcome to "So_Long: Death's Collection". Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
 License
 
 This project is licensed under the MIT License - see the LICENSE.md file for details.
