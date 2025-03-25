@@ -15,10 +15,17 @@ Welcome to "So_Long: Death's Collection", a 2D puzzle-adventure game where you g
 To set up the game on your local machine, follow these steps:
 
 ```bash
-git clone https://github.com/Safwaan-GitHub/so_long.git
-cd so_long
-make
-./so_long maps/map.ber
+1. Clone the repository
+- "git clone https://github.com/Safwaan-GitHub/so_long.git"
+
+2. Change directory
+- cd so_long
+
+3. Compile the program
+- make
+
+4. Change Map if required (NOT NECESSARY)
+- ./so_long/maps/map.ber
 ```
 
 ## Gameplay
