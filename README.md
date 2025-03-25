@@ -23,7 +23,7 @@ To set up the game on your local machine, follow these steps:
 ```
 Clone the repository below into the so_long folder.
 ```bash
-- "git clone https://github.com/42paris/minilibx-linux.git"
+"git clone https://github.com/42paris/minilibx-linux.git"
 ```
 Run this command inside the minilibx folder.
 ```bash
