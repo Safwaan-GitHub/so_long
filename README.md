@@ -37,8 +37,11 @@ The game provides immediate visual feedback via a movement counter displayed on-
 ## Features
 
 Animated Enemies: Encounter foes with unique animations that bring the realm to life.
+
 Map Validation: The game rigorously validates each level loaded from .ber files, ensuring all elements are placed correctly for an error-free experience.
+
 Memory Leak-Free: Meticulous memory management ensures a smooth, leak-free gaming experience.
+
 Custom Graphics: All visuals have been carefully crafted, utilizing the capabilities of MiniLibX for an engaging visual experience.
 
 ## Technical Details
