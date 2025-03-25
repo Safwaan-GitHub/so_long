@@ -25,11 +25,10 @@ Clone the repository below into the so_long folder.
 ```bash
 - "git clone https://github.com/42paris/minilibx-linux.git"
 ```
-Run this command to get minilibx
+Run this command inside the minilibx folder.
 ```bash
 sudo apt-get install gcc make xorg libxext-dev libbsd-dev
 ```
-Next
 ```bash
 3. Compile the program
 - make
@@ -37,7 +36,7 @@ Next
 4. Change Map if required (NOT NECESSARY)
 - ./so_long/map.ber
 ```
-Run the game
+Run the game.
 ```bash
 5. ./so_long map.ber
 ```
