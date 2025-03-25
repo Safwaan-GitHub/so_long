@@ -15,25 +15,26 @@ Welcome to "So_Long: Death's Collection", a 2D puzzle-adventure game where you g
 To set up the game on your local machine, follow these steps:
 
 ```bash
-git clone git@github.com:Safwaan-GitHub/so_long.git
+git clone https://github.com/Safwaan-GitHub/so_long.git
 cd so_long
 make
 ./so_long maps/map.ber
 ```
 
-# Gameplay
+## Gameplay
 
 In "So_Long: Death's Collection", players use the W, A, S, and D keys to navigate Death through a mystical realm. The goal is to collect all the souls on the map while avoiding animated enemies. Once all souls are collected, a portal to the living world appears - enter it to win the game!
 
 The game provides immediate visual feedback via a movement counter displayed on-screen, which increases with each move Death makes. The counter not only scores player efficiency but also heightens the game's strategic depth.
-Features
+
+## Features
 
     Animated Enemies: Encounter foes with unique animations that bring the realm to life.
     Map Validation: The game rigorously validates each level loaded from .ber files, ensuring all elements are placed correctly for an error-free experience.
     Memory Leak-Free: Meticulous memory management ensures a smooth, leak-free gaming experience.
     Custom Graphics: All visuals have been carefully crafted, utilizing the capabilities of MiniLibX for an engaging visual experience.
 
-# Technical Details
+## Technical Details
 
 "So_Long: Death's Collection" leverages the MiniLibX library, which is well-suited for rendering 2D graphics on Unix systems. The game features an efficient rendering system, which dynamically updates the graphics based on player movements and actions.
 
@@ -41,11 +42,11 @@ Map files are read and processed using our customized get_next_line function, wh
 
 The game structure and logic are carefully crafted to handle dynamic game states, manage animated sprites, and process user inputs without delay.
 
-# Contributing
+## Contributing
 
 Contributions are welcome to "So_Long: Death's Collection". Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
 
-# License
+## License
 
 This project is licensed under the MIT License - see the LICENSE.md file for details.
 
