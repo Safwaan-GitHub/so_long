@@ -47,6 +47,7 @@ Technical Details
 Map files are read and processed using our customized get_next_line function, which ensures robust reading of level designs. A thorough check of the map layout is performed to validate the placement of walls, collectables, and the overall integrity of each level.
 
 The game structure and logic are carefully crafted to handle dynamic game states, manage animated sprites, and process user inputs without delay.
+
 Contributing
 
 We welcome contributions to "So_Long: Death's Collection". Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
