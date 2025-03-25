@@ -30,7 +30,7 @@ Run this command inside the minilibx folder.
 sudo apt-get install gcc make xorg libxext-dev libbsd-dev
 ```
 ```bash
-3. Compile the program
+3. Compile the program from within so_long directory
 - make
 
 4. Change Map if required (NOT NECESSARY)
