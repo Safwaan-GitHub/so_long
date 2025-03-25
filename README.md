@@ -15,20 +15,13 @@ Welcome to "So_Long: Death's Collection", a 2D puzzle-adventure game where you g
 To set up the game on your local machine, follow these steps:
 
 ```bash
-# Clone the repository to your local machine
 git clone git@github.com:Safwaan-GitHub/so_long.git
-
-# Navigate to the repository
 cd so_long
-
-# Run make to compile the project
 make
-
-# Execute the game using the provided map file
 ./so_long maps/map.ber
 ```
 
-Gameplay
+# Gameplay
 
 In "So_Long: Death's Collection", players use the W, A, S, and D keys to navigate Death through a mystical realm. The goal is to collect all the souls on the map while avoiding animated enemies. Once all souls are collected, a portal to the living world appears - enter it to win the game!
 
@@ -40,7 +33,7 @@ Features
     Memory Leak-Free: Meticulous memory management ensures a smooth, leak-free gaming experience.
     Custom Graphics: All visuals have been carefully crafted, utilizing the capabilities of MiniLibX for an engaging visual experience.
 
-Technical Details
+# Technical Details
 
 "So_Long: Death's Collection" leverages the MiniLibX library, which is well-suited for rendering 2D graphics on Unix systems. The game features an efficient rendering system, which dynamically updates the graphics based on player movements and actions.
 
@@ -48,10 +41,11 @@ Map files are read and processed using our customized get_next_line function, wh
 
 The game structure and logic are carefully crafted to handle dynamic game states, manage animated sprites, and process user inputs without delay.
 
-Contributing
+# Contributing
 
 Contributions are welcome to "So_Long: Death's Collection". Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
-License
+
+# License
 
 This project is licensed under the MIT License - see the LICENSE.md file for details.
 
